@@ -10,7 +10,7 @@ Also see our paper "Another Flip in the Wall of Rowhammer Defenses": https://arx
 
 ```
 make
-./rowhammer
+./rowhammer <gigabytes of memory to use>
 ```
 
 ## Warnings
