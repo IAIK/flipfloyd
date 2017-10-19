@@ -23,8 +23,14 @@ int main(int argc, char* argv[]) {
   if (array == 0 || array == (uint32_t*)-1ULL)
     exit(fprintf(stderr, "ERROR: could not allocate enough memory\n"));
   // allocate memory for array by filling it with random but recognizable data
+  size_t percent = 0;
   for (size_t i = 0; i < memsize/sizeof(uint32_t); ++i)
+  {
+    if ((100 * i) / (memsize/sizeof(uint32_t)) != percent)
+      printf("\033[2K\rAllocating memory... %zu%%",percent = (100 * i) / (memsize/sizeof(uint32_t)));
     array[i] = 0xFFFFFFFFU * (rand() % 2);
+  }
+  printf("\033[2K\r");
 
   size_t flips = 0, tries = 0, replaceline = 0, offset = 0;
   // hammer random addresses forever
