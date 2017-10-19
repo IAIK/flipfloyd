@@ -13,6 +13,10 @@ make
 ./rowhammer <gigabytes of memory to use>
 ```
 
+## Demo
+
+![One-Location Hammering Demo](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
+
 ## Warnings
 
 **Warning #1:** We are providing this code as-is.  You are responsible
