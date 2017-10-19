@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
-#include <sys/mman.h>
 
 #define NUMBER_OF_READS (5*1000*1000)
 #define PRINTF_REWIND() do { if (replaceline) { replaceline = 0; printf("\033[2K\r"); }; } while (0)
@@ -11,15 +10,16 @@ int main(int argc, char* argv[]) {
   // input parsing
   setvbuf(stdout, 0, _IONBF, 0);
   if (argc != 2)
-    exit(fprintf(stderr, "ERROR: Usage: %s <gigabytes to allocate>\n", argv[0]));
+    exit(fprintf(stderr, "ERROR: Usage: %s <gigabytes to allocate, e.g. 1-32>\n", argv[0]));
   char* end = 0;
   size_t memsizegb = strtoull(argv[1],&end,10);
   size_t memsize = 1024ULL * 1024ULL * 1024ULL * memsizegb;
-  if (end == argv[1])
-    exit(fprintf(stderr, "ERROR: Usage: %s <gigabytes to allocate>\n", argv[0]));
+  if (end == argv[1] || memsizegb == 0)
+    exit(fprintf(stderr, "ERROR: Usage: %s <gigabytes to allocate, e.g. 1-32>\n", argv[0]));
 
   // reserve address space for array
-  uint32_t* array = (uint32_t*) mmap(0, memsize, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+  uint32_t* array = (uint32_t*) malloc(memsize);
+  // alternatively you can try: uint32_t* array = (uint32_t*) mmap(0, memsize, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
   if (array == 0 || array == (uint32_t*)-1ULL)
     exit(fprintf(stderr, "ERROR: could not allocate enough memory\n"));
   // allocate memory for array by filling it with random but recognizable data

@@ -13,6 +13,11 @@ make
 ./rowhammer <gigabytes of memory to use>
 ```
 
+The more gigabytes the better, but too much will bring your system out of memory.
+60-90% of the available memory is a good range.
+
+How long will it run? It might run days without bit flips. If it finds bit flips on your machine, please open an issue or send us a message, we'd like to see your results!
+
 ## Demo (Skylake i7 DDR4-2133)
 
 ![One-Location Hammering Demo on Skylake i7 DDR4-2133](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab05.gif)
