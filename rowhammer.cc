@@ -1,17 +1,7 @@
-#include <sys/ioctl.h>
-#include <asm/unistd.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <inttypes.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
-#include <string.h>
+#include <inttypes.h>
 #include <sys/mman.h>
-#include <time.h>
-#include <unistd.h>
-#include <vector>
 
 #define NUMBER_OF_READS (5*1000*1000)
 #define PRINTF_REWIND() do { if (replaceline) { replaceline = 0; printf("\033[2K\r"); }; } while (0)
