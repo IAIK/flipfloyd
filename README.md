@@ -1,10 +1,10 @@
-# Program for testing for the DRAM "rowhammer" problem
+# FlipFloyd repository with tools from the paper "Another Flip in the Wall of Rowhammer Defenses"
 
 This tool tests whether your system is susceptible for one-location hammering bit flips.
 
 See https://github.com/IAIK/rowhammerjs/tree/master/native for a double-sided hammering test (which is more likely to find bit flips on your system).
 
-Also see our paper ''Another Flip in the Wall of Rowhammer Defenses'': https://arxiv.org/abs/1710.00551
+Also see our paper "Another Flip in the Wall of Rowhammer Defenses": https://arxiv.org/abs/1710.00551
 
 ## Build and Run
 
