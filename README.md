@@ -1,6 +1,6 @@
-# FlipFloyd repository with tools from the paper "Another Flip in the Wall of Rowhammer Defenses"
+# Tools for "Another Flip in the Wall"
 
-This tool tests whether your system is susceptible for one-location hammering bit flips.
+This Rowhammer tool tests whether your system is susceptible for one-location hammering bit flips.
 
 See https://github.com/IAIK/rowhammerjs/tree/master/native for a double-sided hammering test (which is more likely to find bit flips on your system).
 
