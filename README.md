@@ -13,9 +13,13 @@ make
 ./rowhammer <gigabytes of memory to use>
 ```
 
-## Demo
+## Demo (Skylake i7 DDR4-2133)
 
-![One-Location Hammering Demo](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
+![One-Location Hammering Demo on Skylake i7 DDR4-2133](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab05.gif)
+
+## Demo (Haswell i7 DDR3-1600)
+
+![One-Location Hammering Demo on Haswell i7 DDR3-1600](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
 
 ## Warnings
 
