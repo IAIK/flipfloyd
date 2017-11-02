@@ -20,14 +20,6 @@ The more gigabytes the better, but too much will bring your system out of memory
 
 How long will it run? It might run days without bit flips. If it finds bit flips on your machine, please open an issue or send us a message, we'd like to see your results!
 
-### Demo (Skylake i7 DDR4-2133)
-
-![One-Location Hammering Demo on Skylake i7 DDR4-2133](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab05.gif)
-
-### Demo (Haswell i7 DDR3-1600)
-
-![One-Location Hammering Demo on Haswell i7 DDR3-1600](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
-
 ## Memory waylaying tool
 
 These tools implement two parts of waylaying.
@@ -47,9 +39,19 @@ sudo ./check /usr/bin/sudo   # sudo to get the physical address
 
 The second run of the check tool will show a new physical address for the same binary page.
 
-### Demo
+## Demos
 
-![TODO](https://raw.githubusercontent.com/IAIK/flipfloyd/master/todo.gif)
+### One-Location Hammering Demo (Skylake i7 DDR4-2133)
+
+![One-Location Hammering Demo on a Skylake i7 DDR4-2133](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab05.gif)
+
+### One-Location Hammering Demo (Haswell i7 DDR3-1600)
+
+![One-Location Hammering Demo on a Haswell i7 DDR3-1600](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
+
+### Waylaying Demo (Skylake i5 12 GB RAM)
+
+![Waylaying Demo on a Skylake i5 with 12 GB of RAM](https://raw.githubusercontent.com/IAIK/flipfloyd/master/waylaying.gif)
 
 ## Warnings
 
