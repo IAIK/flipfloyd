@@ -1,6 +1,6 @@
 # Tools for "Another Flip in the Wall"
 
-## Hammer tool
+## One-Location Hammering Tool
 
 This Rowhammer tool tests whether your system is susceptible for one-location hammering bit flips.
 
@@ -20,13 +20,15 @@ The more gigabytes the better, but too much will bring your system out of memory
 
 How long will it run? It might run days without bit flips. If it finds bit flips on your machine, please open an issue or send us a message, we'd like to see your results!
 
-## Memory waylaying tool
+## Linux Memory Waylaying Tool
 
-These tools implement two parts of waylaying.
+These tools implement two parts of waylaying on Linux.
 
-The ''check'' tool prints the physical address of the first page of the specified binary.
+The `check` tool prints the physical address of the first page of the specified binary.
 
-The ''relocate'' tool implements memory chasing (the non-stealthy variant of waylaying) to force relocation of a binary page.
+The `relocate` tool implements memory chasing (the non-stealthy variant of waylaying) to force relocation of a binary page.
+Be aware that the `relocate` tool allocates a file the size of your RAM. This should take less than a second on most systems.
+Once the file exists the runtime of the `relocate` tool should be consistently below one second.
 
 ### Build and Run
 
