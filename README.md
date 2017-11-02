@@ -1,12 +1,14 @@
 # Tools for "Another Flip in the Wall"
 
+## Hammer tool
+
 This Rowhammer tool tests whether your system is susceptible for one-location hammering bit flips.
 
 See https://github.com/IAIK/rowhammerjs/tree/master/native for a double-sided hammering test (which is more likely to find bit flips on your system).
 
 Also see our paper "Another Flip in the Wall of Rowhammer Defenses": https://arxiv.org/abs/1710.00551
 
-## Build and Run
+### Build and Run
 
 ```
 make
@@ -18,13 +20,36 @@ The more gigabytes the better, but too much will bring your system out of memory
 
 How long will it run? It might run days without bit flips. If it finds bit flips on your machine, please open an issue or send us a message, we'd like to see your results!
 
-## Demo (Skylake i7 DDR4-2133)
+### Demo (Skylake i7 DDR4-2133)
 
 ![One-Location Hammering Demo on Skylake i7 DDR4-2133](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab05.gif)
 
-## Demo (Haswell i7 DDR3-1600)
+### Demo (Haswell i7 DDR3-1600)
 
 ![One-Location Hammering Demo on Haswell i7 DDR3-1600](https://raw.githubusercontent.com/IAIK/flipfloyd/master/lab02.gif)
+
+## Memory waylaying tool
+
+These tools implement two parts of waylaying.
+
+The ''check'' tool prints the physical address of the first page of the specified binary.
+
+The ''relocate'' tool implements memory chasing (the non-stealthy variant of waylaying) to force relocation of a binary page.
+
+### Build and Run
+
+```
+make
+sudo ./check /usr/bin/sudo   # sudo to get the physical address
+./relocate <gigabytes of system memory> /usr/bin/sudo
+sudo ./check /usr/bin/sudo   # sudo to get the physical address
+```
+
+The second run of the check tool will show a new physical address for the same binary page.
+
+### Demo
+
+![TODO](https://raw.githubusercontent.com/IAIK/flipfloyd/master/todo.gif)
 
 ## Warnings
 
